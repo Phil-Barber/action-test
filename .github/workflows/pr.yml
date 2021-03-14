@@ -6,12 +6,13 @@ jobs:
     runs-on: ubuntu-latest
     name: Testing coverage action
     steps:
+      - uses: actions/setup-python@v1
       - uses: actions/checkout@master
-      - run: pip install coverage; \
-          export PATH=/home/runner/.local/bin:$PATH \
-          coverage run; \
-          coverage report > .github/workflows/coverage-report.md
-        shell: bash
+      - name: Generate coverage
+      run: |
+        pip install coverage
+        coverage run
+        coverage report > .github/workflows/coverage-report.md
       - uses: Phil-Barber/comment-on-pr@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
