@@ -9,13 +9,13 @@ jobs:
       - uses: actions/setup-python@v1
       - uses: actions/checkout@master
       - name: Generate coverage
-      run: |
-        pip install coverage
-        coverage run
-        coverage report > .github/workflows/coverage-report.md
-      - uses: Phil-Barber/comment-on-pr@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          template: coverage-report.md
-          updatecomment: coverage
+        run: |
+          pip install coverage
+          coverage run
+          coverage report > .github/workflows/coverage-report.md
+        - uses: Phil-Barber/comment-on-pr@master
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          with:
+            template: coverage-report.md
+            updatecomment: coverage
