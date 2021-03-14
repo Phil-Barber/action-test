@@ -7,9 +7,4 @@ jobs:
     name: Testing coverage action
     steps:
       - uses: actions/checkout@master
-      - uses: Phil-Barber/comment-on-pr@update-comment
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          template: template.md
-          updatecomment: coverage
+      - uses: Phil-Barber/python-coverage@master
