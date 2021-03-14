@@ -7,7 +7,7 @@ jobs:
     name: Testing coverage action
     steps:
       - uses: actions/checkout@master
-      - run: EXPORT $PATH=$PATH:/home/runner/.local/bin \
+      - run: export $PATH=$PATH:/home/runner/.local/bin \
           && pip install coverage \
           && /home/runner/.local/bin/coverage run \
           && (coverage report > .github/workflows/coverage-report.md)
