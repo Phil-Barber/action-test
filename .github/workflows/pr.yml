@@ -11,5 +11,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          filename: template.md
+          domain: template.md
           update-comment: "test comment id"
