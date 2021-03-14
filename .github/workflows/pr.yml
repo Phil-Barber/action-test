@@ -7,7 +7,6 @@ jobs:
     name: Testing coverage action
     steps:
       - uses: actions/checkout@master
-      - uses: Phil-Barber/python-coverage@master
       - run: pip install coverage && coverage run && (coverage report > .github/workflows/coverage-report.md)
         shell: bash
       - uses: Phil-Barber/comment-on-pr@master
