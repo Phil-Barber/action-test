@@ -6,6 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     name: Testing coverage action
     steps:
-    - name: Test
-      id: test
-      uses: https://github.com/Phil-Barber/comment-on-pr@update-comment
+      - uses: actions/checkout@master
+      - uses: Phil-Barber/comment-on-pr@update-comment
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: template.md
+          update-comment: "test comment id"
