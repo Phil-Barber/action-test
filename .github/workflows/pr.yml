@@ -7,10 +7,10 @@ jobs:
     name: Testing coverage action
     steps:
       - uses: actions/checkout@master
-      - run: export PATH=/home/runner/.local/bin:$PATH \
-          && pip install coverage \
-          && /home/runner/.local/bin/coverage run \
-          && (coverage report > .github/workflows/coverage-report.md)
+      - run: export PATH=/home/runner/.local/bin:$PATH 
+        #&& pip install coverage \
+        #&& /home/runner/.local/bin/coverage run \
+        #&& (coverage report > .github/workflows/coverage-report.md)
         shell: bash
       - uses: Phil-Barber/comment-on-pr@master
         env:
