@@ -11,5 +11,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          update-comment: coverage
+          updatecomment: coverage
           template: template.md
