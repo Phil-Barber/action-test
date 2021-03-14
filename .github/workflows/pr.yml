@@ -12,4 +12,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           template: template.md
-          update-comment: "test comment id"
+          update-comment: coverage
