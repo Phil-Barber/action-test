@@ -8,3 +8,11 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: Phil-Barber/python-coverage@master
+      - run: pip install coverage && coverage run && (coverage report > .github/workflows/coverage-report.md)
+        shell: bash
+      - uses: Phil-Barber/comment-on-pr@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          template: coverage-report.md
+          updatecomment: coverage
