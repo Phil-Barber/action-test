@@ -10,8 +10,8 @@ jobs:
       - run: export PATH=/home/runner/.local/bin:$PATH 
         shell: bash
       - run: pip install coverage \
-        && /home/runner/.local/bin/coverage run \
-        && (coverage report > .github/workflows/coverage-report.md)
+          && /home/runner/.local/bin/coverage run \
+          && (coverage report > .github/workflows/coverage-report.md)
         shell: bash
       - uses: Phil-Barber/comment-on-pr@master
         env:
