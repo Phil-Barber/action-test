@@ -8,4 +8,4 @@ jobs:
     steps:
     - name: Test
       id: test
-      uses: Phil-Barber/python-coverage@master
+      uses: https://github.com/Phil-Barber/comment-on-pr@update-comment
